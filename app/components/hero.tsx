@@ -13,7 +13,7 @@ export function HomepageHero({ showTitle = true }) {
               <Link to="/" className="flex items-center">
                 <span className="sr-only">Help Center</span>
                 <div className="flex items-center gap-1">
-                  <p>Help Center</p>
+                  <p>Help.io</p>
                   <Logo/>
                 </div>
                 <div className="hidden ml-6 space-x-8 lg:block">
@@ -47,8 +47,8 @@ export function HomepageHero({ showTitle = true }) {
 
         <div className="pb-6">
           {showTitle && (
-            <h1 className="text-4xl font-light mb-6">
-              Dicas e respostas da Coders Club
+            <h1 className="text-4xl font-light mb-6 mt-6">
+              Principais duvidas respondidas
             </h1>
           )}
 

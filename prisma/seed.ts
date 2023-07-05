@@ -17,14 +17,14 @@ async function seed() {
   // Unforunately, createMany is not supported for SQLite :(
   const { id: introductionId } = await prisma.collection.create({
     data: {
-      name: "O que é a Coders Club?",
+      name: "O que é a Help.io?",
       description: faker.lorem.lines(1),
     },
   });
 
   const { id: platformId } = await prisma.collection.create({
     data: {
-      name: "A plataforma da Coders Club",
+      name: "A plataforma da Help.io",
       description: faker.lorem.lines(1),
     },
   });
@@ -38,7 +38,7 @@ async function seed() {
 
   await prisma.article.create({
     data: {
-      title: "O que é a comunidade Coders Club?",
+      title: "O que é a comunidade Help.io?",
       description: faker.lorem.lines(1),
       content: fakeContent(),
       collectionId: introductionId,
