@@ -1,6 +1,7 @@
 import { Link } from "@remix-run/react";
 import { SearchIcon, ExternalLinkIcon } from "@heroicons/react/solid";
 import { Container } from "./container";
+import { Logo } from "./Logo";
 
 export function HomepageHero({ showTitle = true }) {
   return (
@@ -11,14 +12,17 @@ export function HomepageHero({ showTitle = true }) {
             <div className="w-full py-6 flex items-center justify-between border-b border-slate-200 lg:border-none">
               <Link to="/" className="flex items-center">
                 <span className="sr-only">Help Center</span>
-                <img className="h-10 w-auto" src="/logo.png" alt="" />
+                <div className="flex items-center gap-1">
+                  <p>Help Center</p>
+                  <Logo/>
+                </div>
                 <div className="hidden ml-6 space-x-8 lg:block">
                   <p className="text-lg font-medium">Central de Ajuda</p>
                 </div>
               </Link>
               <div className="ml-10 space-x-6 flex items-center">
                 <a
-                  href="https://codersclub.com.br"
+                  href="https://github.com/Lucas0019/remix-fundamentals"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-medium hover:text-primary inline-flex items-center"
@@ -28,7 +32,7 @@ export function HomepageHero({ showTitle = true }) {
                     <polyline points="15 3 21 3 21 9"></polyline>
                     <line x1="10" y1="14" x2="21" y2="3"></line>
                   </ExternalLinkIcon>
-                  Ir para CodersClub
+                  Código fonte
                 </a>
                 <Link
                   to="/article-new"
