@@ -1,23 +1,20 @@
 import { Link } from "@remix-run/react";
 import { Breadcrumb, BreadcrumbItem } from "~/components/breadcrumb";
 import { Container } from "~/components/container";
-import { HomepageHero } from "~/components/hero";
 
-export default function Index() {
+export default function Collections() {
   return (
     <div>
-      <HomepageHero showTitle={false} />
-
       <Container className="py-10 space-y-8">
         <Breadcrumb>
           <BreadcrumbItem to="/">Página Inicial</BreadcrumbItem>
-          <BreadcrumbItem to="/collection">Collections</BreadcrumbItem>
-          <BreadcrumbItem to="/article">Article</BreadcrumbItem>
+          <BreadcrumbItem to="/collections/collection">Collections</BreadcrumbItem>
+          <BreadcrumbItem to="/articles/article">Article</BreadcrumbItem>
         </Breadcrumb>
 
         {[...Array(5)].map((_, index) => (
           <Link
-            to="/article"
+            to="/articles/article"
             className="w-full bg-slate-50 shadow rounded-sm p-6 block"
             key={index}
           >

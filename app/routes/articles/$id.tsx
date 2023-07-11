@@ -1,17 +1,15 @@
 import { Container } from "~/components/container";
 import { Breadcrumb, BreadcrumbItem } from "~/components/breadcrumb";
-import { HomepageHero } from "~/components/hero";
 
-export default function Index() {
+export default function Articles() {
   return (
     <div>
-      <HomepageHero showTitle={false} />
 
       <Container className="py-10">
         <Breadcrumb>
           <BreadcrumbItem to="/">Página Inicial</BreadcrumbItem>
-          <BreadcrumbItem to="/collection">Collections</BreadcrumbItem>
-          <BreadcrumbItem to="/article">Article</BreadcrumbItem>
+          <BreadcrumbItem to="/collections/collection">Collections</BreadcrumbItem>
+          <BreadcrumbItem to="/articles/article">Article</BreadcrumbItem>
         </Breadcrumb>
       </Container>
 

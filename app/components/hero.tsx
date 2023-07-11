@@ -1,11 +1,11 @@
 import { Link } from "@remix-run/react";
 import { SearchIcon, ExternalLinkIcon } from "@heroicons/react/solid";
 import { Container } from "./container";
-import { Logo } from "./Logo";
+import { Logo } from "./logo";
 
-export function HomepageHero({ showTitle = true }) {
+export function Hero({ showTitle = true }) {
   return (
-    <div className="bg-slate-50">
+    <div id="hero" className="bg-slate-50">
       <Container>
         <header>
           <nav aria-label="Top">
@@ -35,7 +35,7 @@ export function HomepageHero({ showTitle = true }) {
                   Código fonte
                 </a>
                 <Link
-                  to="/article-new"
+                  to="/articles/new"
                   className="text-sm font-medium hover:text-primary"
                 >
                   Novo artigo

@@ -6,9 +6,15 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
 
-import styles from "./styles/app.css";
+import styles from "~/styles/app.css";
+import { Hero } from "~/components/hero";
+
+type DocumentProps = {
+  children: React.ReactNode;
+}
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
@@ -16,12 +22,12 @@ export const links: LinksFunction = () => {
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Help Center",
+  title: "Home | Help.io",
   description: "Welcome to remix!",
   viewport: "width=device-width,initial-scale=1",
 });
 
-export default function App() {
+function Document({children}: DocumentProps) {
   return (
     <html lang="en">
       <head>
@@ -29,7 +35,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        {children}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
@@ -37,3 +43,17 @@ export default function App() {
     </html>
   );
 }
+
+
+export default function App() {
+
+  const location = useLocation();
+
+  return (
+    <Document>
+      <Hero showTitle={location.pathname === "/"} />
+      <Outlet />
+    </Document>
+  )
+}
+    

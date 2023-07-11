@@ -1,16 +1,14 @@
 import { Link } from "@remix-run/react";
 import { Container } from "~/components/container";
-import { HomepageHero } from "~/components/hero";
 
-export default function Index() {
+export default function Main() {
   return (
     <div>
-      <HomepageHero />
 
       <Container className="py-10 space-y-8">
         {[...Array(5)].map((_, index) => (
           <Link
-            to="/collection"
+            to="/collections/collection"
             className="w-full bg-slate-50 shadow rounded-sm p-6 block"
             key={index}
           >

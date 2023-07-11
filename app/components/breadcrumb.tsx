@@ -23,7 +23,9 @@ export function BreadcrumbItem({
   ...props
 }: NavLinkProps) {
   return (
-    <li className="not-last-child:after:content-['>'] not-last-child:after:text-slate-400 not-last-child:after:px-2">
+    <li 
+      id="breadcrumb-item"
+      className="not-last-child:after:content-['>'] not-last-child:after:text-slate-400 not-last-child:after:px-2">
       <NavLink
         to={to}
         className={({ isActive }) =>
