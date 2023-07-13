@@ -1,22 +1,39 @@
-import { Link } from "@remix-run/react";
+import type { LoaderArgs } from "@remix-run/node";
+import { Link, useLoaderData } from "@remix-run/react";
 import { Container } from "~/components/container";
+import { prisma } from "~/db.server";
+
+export async function loader(args: LoaderArgs) {
+ 
+  const collections = await prisma.collection.findMany({
+    select: {
+      id: true,
+      name: true,
+      description: true,
+    }
+  });
+
+  return {
+    collections,
+  }
+}
 
 export default function Main() {
+
+  const { collections } = useLoaderData<typeof loader>();
+
   return (
     <div>
 
       <Container className="py-10 space-y-8">
-        {[...Array(5)].map((_, index) => (
+        {collections?.map((collection, index) => (
           <Link
-            to="/collections/collection"
+            to={`/collections/${collection.id}`}
             className="w-full bg-slate-50 shadow rounded-sm p-6 block"
-            key={index}
+            key={collection.id}
           >
-            <h2 className="text-xl text-slate-900">Collection {index + 1}</h2>
-            <p className="text-slate-400 mt-1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <h2 className="text-xl text-slate-900">{collection?.name}</h2>
+            <div className="text-slate-400 mt-1">{collection?.description}</div>
           </Link>
         ))}
       </Container>

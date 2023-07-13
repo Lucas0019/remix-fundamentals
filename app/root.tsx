@@ -52,7 +52,9 @@ export default function App() {
   return (
     <Document>
       <Hero showTitle={location.pathname === "/"} />
-      <Outlet />
+      <main className="h-full flex flex-col">
+        <Outlet />
+      </main>
     </Document>
   )
 }

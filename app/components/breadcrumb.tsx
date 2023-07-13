@@ -10,8 +10,10 @@ type BreadcrumbProps = {
 
 export function Breadcrumb({ children, className }: BreadcrumbProps) {
   return (
-    <nav>
-      <ul className={cc(["flex items-center", className])}>{children}</ul>
+    <nav id="breadcrumb" className="mb-8">
+      <ul className={cc(["flex items-center flex-wrap", className])}>
+        {children}
+      </ul>
     </nav>
   );
 }
@@ -25,9 +27,10 @@ export function BreadcrumbItem({
   return (
     <li 
       id="breadcrumb-item"
-      className="not-last-child:after:content-['>'] not-last-child:after:text-slate-400 not-last-child:after:px-2">
+      className="not-last-child:after:content-['/'] not-last-child:after:text-slate-400 not-last-child:after:px-2">
       <NavLink
         to={to}
+        id="breadcrumb-link"
         className={({ isActive }) =>
           cc([
             "text-sm text-slate-400",
