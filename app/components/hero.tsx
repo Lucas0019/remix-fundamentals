@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { SearchIcon, ExternalLinkIcon } from "@heroicons/react/solid";
+import { ExternalLinkIcon } from "@heroicons/react/solid";
 import { Container } from "./container";
 import { Logo } from "./logo";
 
@@ -51,22 +51,6 @@ export function Hero({ showTitle = true }) {
               Principais duvidas respondidas
             </h1>
           )}
-
-          <div className="relative rounded-md shadow-sm inline-flex items-center w-full">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <SearchIcon
-                className="h-6 w-6 text-slate-400"
-                aria-hidden="true"
-              />
-            </div>
-            <input
-              type="text"
-              name="search"
-              id="search"
-              className="block w-full pl-14 rounded-md py-4 text-slate-400 bg-white ring-1 ring-slate-200 transition-colors text-lg focus:text-slate-900 focus:outline-none"
-              placeholder="Buscar por artigos"
-            />
-          </div>
         </div>
       </Container>
     </div>
